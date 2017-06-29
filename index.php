@@ -25,7 +25,7 @@
 					$whereisdiv = 0;
 				} else {
 					$whereisdiv = 1;
-					$result = "<div class ='jumbotron text-center'><div class='card  style='swidth: 20rem;'> <img class='card-img-top' src='https://allgeektomeblog.files.wordpress.com/2012/01/smg_king_leonidas.jpg' alt='Card image cap'><div class='card-block'> <h4 class='card-title'>Mr. Leonidas says</h4><p class='card-text' style='font-size: 20px;'>You can not divide by zero!!!</p></div></div></div>";
+					$result = "<div class ='jumbotron text-center'><div class='card  style='max-width: 20rem;'> <img class='card-img-top' src='https://allgeektomeblog.files.wordpress.com/2012/01/smg_king_leonidas.jpg' alt='Card image cap'><div class='card-block'> <h4 class='card-title'>Mr. Leonidas says</h4><p class='card-text' style='font-size: 20px;'>You can not divide by zero!!!</p></div></div></div>";
 				}
 			break;
 			default:
@@ -86,7 +86,7 @@
 			 <?php 
 
 			 	if ($whereisdiv !== 1) {
-			 		echo "<div class ='jumbotron text-center'><div class='card  style='width: 20rem;> <img class='card-img-top' src='http://static.fjcdn.com/pictures/Glass_39db05_221277.jpg' alt='Card image cap'><div class='card-block'> <h4 class='card-title'>Mr. Leonidas says</h4><p class='card-text' style='font-size: 20px;'>" . $result . "</p></div></div></div>";
+			 		echo "<div class ='jumbotron text-center'><div class='card  style='width: 20rem;> <img class='card-img-top' src='http://static.fjcdn.com/pictures/Glass_39db05_221277.jpg' alt='Card image cap'><div class='card-block'><h4 class='card-title'>Mr. Leonidas says</h4><p class='card-text' style='font-size: 20px;'>" . $result . "</p></div></div></div>";
 			 	} else {
 			 		echo $result;
 			 	}
