@@ -31,7 +31,7 @@ function fivefour2($arg1, $arg2, $result) {
 }
 function satan($masyvas) {
 	if (array_search("666",$masyvas)) {
-		echo "<br>Satan<br/>";
+		echo "<br/><br>Satan<br/><br/>";
 	} else {
 		return true;
 	}
@@ -48,4 +48,8 @@ function cube ($arg1, $arg2) {
 		
 	}
 }
+
+//
+//
+//
 ?>
