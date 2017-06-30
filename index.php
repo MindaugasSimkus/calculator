@@ -105,9 +105,15 @@
 	        	print_r($_GET);
 	        	oddeven($result);
 	        	fivefour($_GET['arg1'], $_GET['arg2'], $result);
-	        	$selected_val = $_GET['operation'];
-	        	$temp = array($_GET['arg1'], $_GET['arg2'], $result, $_GET['operation'], rand(0, 9999));
+	        	fivefour2($_GET['arg1'], $_GET['arg2'], $result);
+	        	
+	        	$temp = array($_GET['arg1'], $_GET['arg2'], $result, $_GET['operation'], rand(0, 9999), "666");
 	        	print_r($temp);
+
+	        	satan($temp);
+	        	
+	        	cube($_GET['arg1'], $_GET['arg2']);
+
 	        ?>
 	        </pre>
 
