@@ -1,5 +1,5 @@
 <?php 
-  //require "php_paskaita4functions.php";
+  require "functions.php";
   //include "functions.php";
 ?>
 <?php
@@ -9,6 +9,7 @@
 		switch($_GET['operation']){
 			case "add":
 				$result = $_GET['arg1'] + $_GET['arg2'];
+				print_symbols($result);
 				$whereisdiv = 0;
 			break;
 			case "sub":
@@ -25,12 +26,13 @@
 					$whereisdiv = 0;
 				} else {
 					$whereisdiv = 1;
-					$result = "<div class ='jumbotron text-center'><div class='card  style='max-width: 20rem;'> <img class='card-img-top' src='https://allgeektomeblog.files.wordpress.com/2012/01/smg_king_leonidas.jpg' alt='Card image cap'><div class='card-block'> <h4 class='card-title'>Mr. Leonidas says</h4><p class='card-text' style='font-size: 20px;'>You can not divide by zero!!!</p></div></div></div>";
+					$result = "<div class ='jumbotron text-center'><div class='card  style='max-width: 20rem;'> <img class='card-img-top' src='https://allgeektomeblog.files.wordpress.com/2012/01/smg_king_leonidas.jpg' alt='Card image cap'><div class='card-block'> <h4 class='card-title'>Mr. Leonidas says</h4><p class='card-text alert-danger' style='font-size: 20px;'>You can not divide by zero!!!</p></div></div></div>";
 				}
 			break;
 			default:
 		}
 	} 
+
 	if(isset($_GET['arg1']) && isset($_GET['arg2'])) {
 		$_GET['arg1'] = $_GET['arg1'];
 		$_GET['arg2'] = $_GET['arg2'];
@@ -38,6 +40,7 @@
 		$_GET['arg1'] = "";
 		$_GET['arg2'] = "";
 	}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -48,6 +51,7 @@
 	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+	<script src="script.js"></script>
     <style>
     	div.img-responsive {
     		background: url(https://allgeektomeblog.files.wordpress.com/2012/01/smg_king_leonidas.jpg) no-repeat center;
@@ -91,19 +95,23 @@
 			 		echo $result;
 			 	}
 			 ?>
-		    <script>
-				function check_arg(argument){
-					if (document.getElementById(argument).value == "") {
-						document.getElementById(argument).classList.add("alert-danger");
-					} else {
-						document.getElementById(argument).classList.add("alert-success");
-					}
-				}
-			</script>
+
 			<script>
 	        	check_arg("arg1");
 	        	check_arg("arg2");
 	        </script>
+	        <pre>
+	        <?php 
+	        	print_r($_GET);
+	        	oddeven($result);
+	        	fivefour($_GET['arg1'], $_GET['arg2'], $result);
+	        	$selected_val = $_GET['operation'];
+	        	$temp = array($_GET['arg1'], $_GET['arg2'], $result, $_GET['operation'], rand(0, 9999));
+	        	print_r($temp);
+	        ?>
+	        </pre>
+
+
         </div>
       </div>
     </div>
