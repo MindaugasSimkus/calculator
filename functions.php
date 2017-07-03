@@ -48,6 +48,20 @@ function cube ($arg1, $arg2) {
 		
 	}
 }
+function parameters($x, $y, $z, $lines) {
+	for ($k=0; $k < $lines ; $k++) { 
+		for ($l=0; $l < $x; $l++) { 
+			echo "+";
+		}
+		for ($u=0; $u < $y; $u++) {
+				echo "*"; 
+		}	
+		for ($i=0; $i < $z ; $i++) { 
+			echo "#";
+		}
+		echo "<br/>";
+	}
+}
 
 //
 //
